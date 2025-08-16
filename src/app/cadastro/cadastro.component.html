@@ -1,41 +1,78 @@
 <div fxLayout="row" fxLayoutAlign="center">
-    <div fxLayout="column" fxFlex="1000px">
-        <form class="mt-60" #clientesFrm="ngForm">
-            <mat-card>
-                <mat-card-header>
-                    <mat-card-title>Dados Pessoais</mat-card-title>
-                </mat-card-header>
-                <mat-card-content class="mt-20">
-                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutgap="16px">
-                        <mat-form-field class="full-width">
-                            <mat-label>Nome:*</mat-label>
-                            <input type="text" placeholder="Exemplo: Enrico Brasil" matInput>
-                        </mat-form-field>
-                    </div>
+  <div fxLayout="column" fxFlex="1000px">
+    <form class="mt-60" #clientesFrm="ngForm" (ngSubmit)="salvar()">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Dados Pessoais</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="mt-20">
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutgap="16px">
+            <mat-form-field class="full-width">
+              <mat-label>Nome:*</mat-label>
+              <input
+                type="text"
+                placeholder="Exemplo: Enrico Brasil"
+                [(ngModel)]="cliente.nome"
+                name="nome"
+                matInput
+              />
+            </mat-form-field>
+          </div>
 
-                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutgap="16px">
-                        <mat-form-field class="full-width">
-                            <mat-label>Email:*</mat-label>
-                            <input type="email" placeholder="Exemplo: EnricoBrasil@hotmail.com" matInput>
-                        </mat-form-field>
-                    </div>
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutgap="16px">
+            <mat-form-field class="full-width">
+              <mat-label>Email:*</mat-label>
+              <input
+                type="email"
+                placeholder="Exemplo: EnricoBrasil@hotmail.com"
+                [(ngModel)]="cliente.email"
+                name="email"
+                matInput
+              />
+            </mat-form-field>
+          </div>
 
-                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutgap="16px">
-                        <mat-form-field class="full-width">
-                            <mat-label>CPF:*</mat-label>
-                            <input type="email" placeholder="Digite se CPF" matInput>
-                        </mat-form-field>
-                    </div>
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutgap="16px">
+            <mat-form-field class="full-width">
+              <mat-label>CPF:*</mat-label>
+              <input
+                type="email"
+                placeholder="Digite se CPF"
+                [(ngModel)]="cliente.cpf"
+                name="cpf"
+                matInput
+              />
+            </mat-form-field>
+          </div>
 
-                    <div fxLayout="row" fxLayoutAlign="start" fxLayoutgap="16px">
-                        <mat-form-field class="full-width">
-                            <mat-label>Data Nascimento:*</mat-label>
-                            <input type="email" placeholder="01/01/01" matInput>
-                        </mat-form-field>
-                    </div>
-
-                </mat-card-content>
-            </mat-card>
-        </form>
-    </div>
+          <div fxLayout="row" fxLayoutAlign="start" fxLayoutgap="16px">
+            <mat-form-field class="full-width">
+              <mat-label>Data Nascimento:*</mat-label>
+              <input
+                type="email"
+                placeholder="01/01/01"
+                [(ngModel)]="cliente.nascimento"
+                name="nascimento"
+                matInput
+              />
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-flat-button type="submit">
+            <mat-icon fontIcon="save"></mat-icon>
+            salvar
+          </button>
+          <button mat-flat-button type="submit">
+            <mat-icon fontIcon="refresh"></mat-icon>
+            Atualizar
+          </button>
+          <button mat-flat-button type="submit">
+            <mat-icon fontIcon="backspace"></mat-icon>
+            Limpar
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
+  </div>
 </div>
